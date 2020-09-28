@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Snapable
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3981496505
+    locked: 0
+  - name: Tiles
+    uniqueID: 354269239
+    locked: 0
+  - name: Building
+    uniqueID: 4058988585
+    locked: 0
+  - name: Factories
+    uniqueID: 1911834455
+    locked: 0
+  - name: Floating
+    uniqueID: 2505488025
+    locked: 0
+  - name: UI
+    uniqueID: 4067283669
     locked: 0
