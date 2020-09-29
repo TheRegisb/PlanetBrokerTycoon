@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mineable : MonoBehaviour
 {
     public int resources = 50000;
     public int maxResources = 75000;
     public Building building = null;
+    private Text infoContainerUI;
     private bool canDestroy = false;
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<SpriteRenderer>().color = GetComponent<LinearColorGradient>().GetColorAt((float)resources / maxResources);
+        infoContainerUI = GameObject.Find("TileInfoLabel").GetComponent<Text>();
     }
 
     // Sell building on mouse hovering and right click.
@@ -77,5 +80,14 @@ public class Mineable : MonoBehaviour
     void OnMouseExit()
     {
         canDestroy = false;
+    }
+
+    void OnMouseOver()
+    {
+        infoContainerUI.text = string.Format("Ressources: {1}{0}Bâtiment : {2}{0}Valeur de vente : {3}",
+            Environment.NewLine, 
+            resources, 
+            (building == null ? "--" : building.name), 
+            (building == null ? "--" : (building.canBeSold ? building.sellValue.ToString() : "Impossible")));
     }
 }

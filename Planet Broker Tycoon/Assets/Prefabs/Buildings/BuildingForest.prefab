@@ -254,9 +254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e1b1d1a56dac240a852a93b9c34a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: "For\xEAt"
+  notes: La valeur de vente augmente avec le temps.
   moneyCost: 2000
   ecoCost: 0.2
-  tickResourceDrain: -50
+  tickResourceDrain: -150
   tickProfit: 0
   tickEcoDamage: -0.2
   sellValue: 100

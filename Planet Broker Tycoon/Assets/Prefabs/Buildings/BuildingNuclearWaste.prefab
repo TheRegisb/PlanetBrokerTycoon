@@ -254,6 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629b7fdf17b3377478ab4bc9efe278e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: "Stockage de d\xE9chets nucl\xE9aire"
+  notes: "Ne peut \xEAtre vendu."
   moneyCost: 0
   ecoCost: 0
   tickResourceDrain: 0

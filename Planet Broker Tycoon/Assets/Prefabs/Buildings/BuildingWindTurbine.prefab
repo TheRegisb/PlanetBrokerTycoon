@@ -254,6 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629b7fdf17b3377478ab4bc9efe278e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: "\xC9olienne"
+  notes: N/A
   moneyCost: 3000
   ecoCost: 0.5
   tickResourceDrain: 100

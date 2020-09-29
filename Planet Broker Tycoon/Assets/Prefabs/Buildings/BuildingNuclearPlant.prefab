@@ -254,6 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cceede65f09a8e84c931a66551ae6c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: "Centrale nucl\xE9aire"
+  notes: "G\xE9n\xE8re p\xE9riodiquement des d\xE9chets rendant une case al\xE9atoire
+    inutilisable."
   moneyCost: 10000
   ecoCost: 2
   tickResourceDrain: 200

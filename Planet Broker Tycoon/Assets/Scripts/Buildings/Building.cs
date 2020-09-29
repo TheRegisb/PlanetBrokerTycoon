@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    // Name of the building, if it wasn't clear enough.
+    public string name = "Bâtiment";
+    // Additional notes for UI display;
+    public string notes = "N/A";
     // Initial monetary cost.
     public int moneyCost = 3000;
     // Initial ecological cost.
@@ -19,8 +23,11 @@ public class Building : MonoBehaviour
     public int sellValue = 1500;
     // Can be removed from a tile.
     public bool canBeSold = true;
+    // Sound made when the building spawn.
     public AudioClip[] onPickup;
+    // Sound made when the building is registered to a tile.
     public AudioClip[] onDropping;
+    // Sound made when the building is removed.
     public AudioClip[] onSelling;
 
     private AudioSource audioSource;
