@@ -37,7 +37,7 @@ public class Mineable : MonoBehaviour
         resources = Mathf.Clamp(resources - building.tickResourceDrain, 0, maxResources);
         building.TickSpecial();
         GetComponent<SpriteRenderer>().color = GetComponent<LinearColorGradient>().GetColorAt((float)resources / maxResources);
-        return new KeyValuePair<int, float>(building.tickProfit, building.tickEcoDamage);
+        return new KeyValuePair<int, float>(building.tickProfit, building.tickEcoDamage * -1);
     }
 
     // Get a reference to the building, reposition it at the center of the tile
@@ -49,7 +49,7 @@ public class Mineable : MonoBehaviour
         this.building.gameObject.GetComponent<Collider2D>().enabled = false;
         this.building.PlayDropSound();
         Destroy(this.building.gameObject.GetComponent<Rigidbody2D>());
-        GetComponentInParent<GridManager>().UpdateGlobalState(building.moneyCost * -1, building.ecoCost);
+        GetComponentInParent<GridManager>().UpdateGlobalState(building.moneyCost * -1, building.ecoCost * -1);
     }
 
     // Delete the building for a set monetary gain.
