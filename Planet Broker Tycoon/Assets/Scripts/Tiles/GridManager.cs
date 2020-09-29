@@ -38,4 +38,17 @@ public class GridManager : MonoBehaviour
         gsm.adjustMoney(profit);
         gsm.adjustEcoIntegrity(ecoDrain);
     }
+
+    public bool PopulateRandomTileWith(Building building)
+    {
+        foreach(Mineable tile in tiles)
+        {
+            if (tile.IsAvailable())
+            {
+                tile.Register(building);
+                return true;
+            }
+        }
+        return false;
+    }
 }

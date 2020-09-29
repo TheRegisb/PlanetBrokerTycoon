@@ -18,7 +18,7 @@ public class Mineable : MonoBehaviour
     // Sell building on mouse hovering and right click.
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && canDestroy)
+        if (Input.GetMouseButtonDown(1) && canDestroy && building.canBeSold)
         {
             Unregister();
         }

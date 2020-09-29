@@ -64,13 +64,17 @@ public class GlobalStateMachine : MonoBehaviour
     public void adjustMoney(int gain)
     {
         money += gain;
-        financialPressure -= (gain * moneyToPressureReliefConversionRate);
+        if (gain > 0) // Making money relief the pressure, spending does nothing about it.
+        {
+            financialPressure = Mathf.Clamp(financialPressure - gain * moneyToPressureReliefConversionRate, 0.0f, 100.0f);
+        }
         moneyLabel.text = "$" + money;
     }
 
     public void adjustEcoIntegrity(float damage)
     {
-        ecologialIntegrity += damage;
+        ecologialIntegrity = Mathf.Clamp(ecologialIntegrity + damage, 0.0f, 100.0f);
+        ecologicalIntegritySlider.value = ecologialIntegrity;
         SetSliderTextTo(ecologicalIntegritySlider, string.Format("{0:00.00}%", ecologialIntegrity));
     }
 

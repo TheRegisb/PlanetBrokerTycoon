@@ -17,6 +17,8 @@ public class Building : MonoBehaviour
     public float tickEcoDamage = 0.3f;
     // Monetary gain when removed.
     public int sellValue = 1500;
+    // Can be removed from a tile.
+    public bool canBeSold = true;
     public AudioClip[] onPickup;
     public AudioClip[] onDropping;
     public AudioClip[] onSelling;
@@ -27,24 +29,34 @@ public class Building : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(onPickup[UnityEngine.Random.Range(0, onPickup.Length - 1)]);
+        if (onPickup.Length != 0)
+        {
+            audioSource.PlayOneShot(onPickup[UnityEngine.Random.Range(0, onPickup.Length - 1)]);
+        }
     }
 
     public float PlaySellSound()
     {
-        AudioClip sound = onSelling[UnityEngine.Random.Range(0, onDropping.Length - 1)];
+        if (onSelling.Length != 0)
+        {
+            AudioClip sound = onSelling[UnityEngine.Random.Range(0, onDropping.Length - 1)];
 
-        audioSource.PlayOneShot(sound);
-        return sound.length;
+            audioSource.PlayOneShot(sound);
+            return sound.length;
+        }
+        return 0.0f;
     }
 
     public void PlayDropSound()
     {
-        audioSource.PlayOneShot(onDropping[UnityEngine.Random.Range(0, onDropping.Length - 1)]);
+        if (onDropping.Length != 0)
+        {
+            audioSource.PlayOneShot(onDropping[UnityEngine.Random.Range(0, onDropping.Length - 1)]);
+        }
     }
 
     // To be implemented in child class if needed.
-    public void TickSpecial()
+    public virtual void TickSpecial()
     {
 
     }
