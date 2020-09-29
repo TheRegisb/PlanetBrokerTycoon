@@ -23,7 +23,7 @@ public class DragAndSnap : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0) && !snapped) // Left mouse button released when not already snapped.
         {
-            if (target == null || target.gameObject.GetComponent<Mineable>().IsAvailable()) // As a nuclear waste may spawn at the target in between draging-in and releasing LMB
+            if (target == null || !target.gameObject.GetComponent<Mineable>().IsAvailable()) // As a nuclear waste may spawn at the target in between draging-in and releasing LMB
             {
                 Destroy(this.gameObject);
             } else
