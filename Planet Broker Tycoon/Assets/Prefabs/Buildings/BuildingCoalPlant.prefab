@@ -100,12 +100,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "Usine \xE0 charbon"
   notes: N/A
-  moneyCost: 3000
-  ecoCost: 1
-  tickResourceDrain: 500
+  moneyCost: 10000
+  ecoCost: 0.1
+  tickResourceDrain: 20
   tickProfit: 1000
   tickEcoDamage: 0.3
-  sellValue: 1500
+  sellValue: 2500
   canBeSold: 1
   onPickup:
   - {fileID: 8300000, guid: d25aa92b0d55f0e47842fd6e0ac0c6a8, type: 3}

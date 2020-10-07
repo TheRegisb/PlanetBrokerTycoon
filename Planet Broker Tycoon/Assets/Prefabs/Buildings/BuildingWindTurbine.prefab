@@ -256,12 +256,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\xC9olienne"
   notes: N/A
-  moneyCost: 3000
-  ecoCost: 0.5
-  tickResourceDrain: 100
-  tickProfit: 700
-  tickEcoDamage: 0.05
-  sellValue: 1500
+  moneyCost: 20000
+  ecoCost: 0.2
+  tickResourceDrain: 5
+  tickProfit: 1000
+  tickEcoDamage: 0.005
+  sellValue: 2500
   canBeSold: 1
   onPickup:
   - {fileID: 8300000, guid: d25aa92b0d55f0e47842fd6e0ac0c6a8, type: 3}

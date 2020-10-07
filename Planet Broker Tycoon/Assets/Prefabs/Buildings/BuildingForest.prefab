@@ -256,12 +256,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "For\xEAt"
   notes: La valeur de vente augmente avec le temps.
-  moneyCost: 2000
-  ecoCost: 0.2
-  tickResourceDrain: -150
+  moneyCost: 25000
+  ecoCost: 0.1
+  tickResourceDrain: -20
   tickProfit: 0
-  tickEcoDamage: -0.2
-  sellValue: 100
+  tickEcoDamage: -0.04
+  sellValue: 0
   canBeSold: 1
   onPickup:
   - {fileID: 8300000, guid: d25aa92b0d55f0e47842fd6e0ac0c6a8, type: 3}
@@ -274,5 +274,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ba426c7ed6ecf5f4492a8d58af799071, type: 3}
   - {fileID: 8300000, guid: 0ee59ab2eaf3a6748aedb1137ba4efd0, type: 3}
   - {fileID: 8300000, guid: 07b8704b1fc3a744eac2514b469dc4fd, type: 3}
-  ticksUntilSaleIncrease: 20
-  sellValueIncreaseRate: 100
+  ticksUntilSaleIncrease: 10
+  sellValueIncreaseRate: 500
