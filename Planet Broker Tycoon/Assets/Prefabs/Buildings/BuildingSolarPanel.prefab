@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6063539102783740912}
   - component: {fileID: 5496288197971918373}
   - component: {fileID: 4979471978030715714}
+  - component: {fileID: 4084564829783182030}
   m_Layer: 0
   m_Name: BuildingSolarPanel
   m_TagString: Untagged
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5034471, y: 0.011662603}
     oldSize: {x: 4.52, y: 4.52}
     newSize: {x: 4.52, y: 4.52}
     adaptiveTilingThreshold: 0.5
@@ -274,3 +275,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ba426c7ed6ecf5f4492a8d58af799071, type: 3}
   - {fileID: 8300000, guid: 0ee59ab2eaf3a6748aedb1137ba4efd0, type: 3}
   - {fileID: 8300000, guid: 07b8704b1fc3a744eac2514b469dc4fd, type: 3}
+--- !u!95 &4084564829783182030
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269103547968438809}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b6c2da0b8a87e04495045eaeb378997, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

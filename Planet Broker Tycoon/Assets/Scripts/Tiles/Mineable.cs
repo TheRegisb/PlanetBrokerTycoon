@@ -11,6 +11,12 @@ public class Mineable : MonoBehaviour
     public Building building = null;
     private Text infoContainerUI;
     private bool canDestroy = false;
+
+    public GameObject valueText;
+    public GameObject CanvasContainer;
+    public Color32 bad;
+    public Color32 good;
+    public Color32 money;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +46,28 @@ public class Mineable : MonoBehaviour
         resources = Mathf.Clamp(resources - building.tickResourceDrain, 0, maxResources);
         building.TickSpecial();
         GetComponent<SpriteRenderer>().color = GetComponent<LinearColorGradient>().GetColorAt((float)resources / maxResources);
+        StartCoroutine(launchText());
+        
         return new KeyValuePair<int, float>(building.tickProfit, building.tickEcoDamage * -1);
+    }
+
+    private IEnumerator launchText()
+    {
+        var profit = Instantiate(valueText, building.transform.position, Quaternion.identity);
+        profit.transform.SetParent(CanvasContainer.transform);
+        profit.transform.localScale = new Vector3(.5f, .5f, .5f);
+        profit.GetComponent<Text>().text = building.tickProfit.ToString() + "$";
+        profit.GetComponent<Text>().color = (building.tickProfit > 0 ? money : bad);
+        profit.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 150));
+        Destroy(profit, 1f);
+        yield return new WaitForSeconds(.1f);
+        var damages = Instantiate(valueText, building.transform.position, Quaternion.identity);
+        damages.transform.SetParent(CanvasContainer.transform);
+        damages.transform.localScale = new Vector3(.5f, .5f, .5f);
+        damages.GetComponent<Text>().text = (building.tickEcoDamage * -1).ToString() + "eco";
+        damages.GetComponent<Text>().color = (building.tickEcoDamage <= 0 ? good : bad);
+        damages.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 150));
+        Destroy(damages, 1f);
     }
 
     // Get a reference to the building, reposition it at the center of the tile

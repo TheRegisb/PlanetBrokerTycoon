@@ -29,7 +29,7 @@ public class GlobalStateMachine : MonoBehaviour
     void Start()
     {
         InvokeRepeating("WorldTick", tickDelay, tickDelay); // Start the ticking mecanism after 'tickDelay' seconds elapsed.
-        moneyLabel.text = "$" + money;
+        moneyLabel.text = money.ToString();
         financialPressureSlider.value = financialPressure;
         SetSliderTextTo(financialPressureSlider, string.Format("{0:00.00}%", financialPressure));
         SetSliderTextTo(ecologicalIntegritySlider, string.Format("{0:00.00}%", ecologialIntegrity));
@@ -68,7 +68,7 @@ public class GlobalStateMachine : MonoBehaviour
         {
             financialPressure = Mathf.Clamp(financialPressure - gain * moneyToPressureReliefConversionRate, 0.0f, 100.0f);
         }
-        moneyLabel.text = "$" + money;
+        moneyLabel.text = money.ToString();
     }
 
     public void adjustEcoIntegrity(float damage)
