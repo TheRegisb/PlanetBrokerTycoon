@@ -47,7 +47,6 @@ public class GlobalStateMachine : MonoBehaviour
         financialPressureRate += financialPressureRateIncrease;
         financialPressureSlider.value = financialPressure;
         SetSliderTextTo(financialPressureSlider, string.Format("{0:00.00}%", financialPressure));
-        // TODO Load game over scene or freeze game and display restart/quit modal
         if (ecologialIntegrity <= 0.0f || financialPressure >= 100.0f)
         {
             gameOverModal.SetActive(true);
