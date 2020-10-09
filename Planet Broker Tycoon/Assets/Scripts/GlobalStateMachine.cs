@@ -20,6 +20,10 @@ public class GlobalStateMachine : MonoBehaviour
     // Time in seconds before next tick.
     public float tickDelay = 2.0f;
 
+    public GameObject gameOverModal;
+    public string ecologicalGameOverMsg;
+    public string financialGameOverMsg;
+
     public Text moneyLabel;
     public Slider financialPressureSlider;
     public Slider ecologicalIntegritySlider;
@@ -44,13 +48,14 @@ public class GlobalStateMachine : MonoBehaviour
         financialPressureSlider.value = financialPressure;
         SetSliderTextTo(financialPressureSlider, string.Format("{0:00.00}%", financialPressure));
         // TODO Load game over scene or freeze game and display restart/quit modal
-        if (ecologialIntegrity <= 0.0f)
+        if (ecologialIntegrity <= 0.0f || financialPressure >= 100.0f)
         {
-            Debug.Log("Partie perdue pour cause écologique.");
-        }
-        else if (financialPressure >= 100.0f)
-        {
-            Debug.Log("Partie perdu pour cause économique.");
+            gameOverModal.SetActive(true);
+            GameObject.Find("GameOverText").GetComponent<Text>().text = (ecologialIntegrity <= 0.0f ? ecologicalGameOverMsg : financialGameOverMsg);
+            gameOverModal.SetActive(true);
+            gameObject.GetComponent<AudioSource>().Play();
+            Time.timeScale = 0;
+            
         }
     }
 
