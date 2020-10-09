@@ -52,6 +52,7 @@ public class GlobalStateMachine : MonoBehaviour
             gameOverModal.SetActive(true);
             GameObject.Find("GameOverText").GetComponent<Text>().text = (ecologialIntegrity <= 0.0f ? ecologicalGameOverMsg : financialGameOverMsg);
             gameOverModal.SetActive(true);
+            GameObject.Find("BackgroundAudioPlayer").GetComponent<AudioFadeOut>().FadeOut();
             gameObject.GetComponent<AudioSource>().Play();
             Time.timeScale = 0;
             

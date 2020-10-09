@@ -1968,8 +1968,9 @@ GameObject:
   m_Component:
   - component: {fileID: 786270579}
   - component: {fileID: 786270578}
+  - component: {fileID: 786270580}
   m_Layer: 0
-  m_Name: Background music player
+  m_Name: BackgroundAudioPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2079,12 +2080,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786270577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1831024, y: -0.21669766, z: 156.2313}
+  m_LocalPosition: {x: -9.35, y: -5.15, z: 156.2313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &786270580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786270577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22cec003c6a5b66428f859471f075cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 0.05
 --- !u!4 &795677728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1191184775841034591, guid: 5d86947cccf069e4fb23a57871436890,
