@@ -258,12 +258,12 @@ MonoBehaviour:
   name: "Centrale nucl\xE9aire"
   notes: "G\xE9n\xE8re p\xE9riodiquement des d\xE9chets rendant une case al\xE9atoire
     inutilisable."
-  moneyCost: 10000
-  ecoCost: 2
-  tickResourceDrain: 200
-  tickProfit: 2500
-  tickEcoDamage: 0.1
-  sellValue: 5000
+  moneyCost: 750000
+  ecoCost: 2.5
+  tickResourceDrain: 1
+  tickProfit: 12500
+  tickEcoDamage: 0.07
+  sellValue: 25000
   canBeSold: 1
   onPickup:
   - {fileID: 8300000, guid: d25aa92b0d55f0e47842fd6e0ac0c6a8, type: 3}

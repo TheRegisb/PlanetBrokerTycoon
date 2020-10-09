@@ -257,12 +257,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Panneau solaire
   notes: N/A
-  moneyCost: 5000
-  ecoCost: 2
+  moneyCost: 50000
+  ecoCost: 1
   tickResourceDrain: 0
-  tickProfit: 1000
-  tickEcoDamage: 0
-  sellValue: 2500
+  tickProfit: 3000
+  tickEcoDamage: 0.01
+  sellValue: 7500
   canBeSold: 1
   onPickup:
   - {fileID: 8300000, guid: d25aa92b0d55f0e47842fd6e0ac0c6a8, type: 3}
