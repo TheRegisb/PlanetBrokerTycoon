@@ -23,7 +23,7 @@ public class BTNLoadScene : MonoBehaviour
 	void TaskOnClick()
 	{
 		SceneManager.LoadScene(SceneToLoad);
-		Debug.Log("Woosh !");
+        Time.timeScale = 1;
 	}
 	
 	

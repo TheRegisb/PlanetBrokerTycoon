@@ -96,9 +96,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0efcd36710a2d4145a8060cc6748306c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources: 50000
-  maxResources: 75000
+  resources: 1000
+  maxResources: 1500
   building: {fileID: 0}
+  valueText: {fileID: 7450805600542714196, guid: ae04ec37c34334449a9ec16d27d500ad,
+    type: 3}
+  CanvasContainer: {fileID: 0}
+  bad:
+    serializedVersion: 2
+    rgba: 4278195175
+  good:
+    serializedVersion: 2
+    rgba: 4278285057
+  money:
+    serializedVersion: 2
+    rgba: 4278242559
 --- !u!114 &1191184775841034584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,4 +140,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.05
+  m_Radius: 3.47

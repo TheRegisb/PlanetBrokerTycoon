@@ -27,7 +27,7 @@ public class Mineable : MonoBehaviour
     // Sell building on mouse hovering and right click.
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && canDestroy && building.canBeSold)
+        if (Input.GetMouseButtonDown(1) && canDestroy && building != null && building.canBeSold)
         {
             Unregister();
         }
@@ -53,21 +53,27 @@ public class Mineable : MonoBehaviour
 
     private IEnumerator launchText()
     {
-        var profit = Instantiate(valueText, building.transform.position, Quaternion.identity);
-        profit.transform.SetParent(CanvasContainer.transform);
-        profit.transform.localScale = new Vector3(.5f, .5f, .5f);
-        profit.GetComponent<Text>().text = building.tickProfit.ToString() + "$";
-        profit.GetComponent<Text>().color = (building.tickProfit > 0 ? money : bad);
-        profit.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 150));
-        Destroy(profit, 1f);
+        if (building != null)
+        {
+            var profit = Instantiate(valueText, building.transform.position, Quaternion.identity);
+            profit.transform.SetParent(CanvasContainer.transform);
+            profit.transform.localScale = new Vector3(.5f, .5f, .5f);
+            profit.GetComponent<Text>().text = building.tickProfit.ToString() + "$";
+            profit.GetComponent<Text>().color = (building.tickProfit > 0 ? money : bad);
+            profit.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 150));
+            Destroy(profit, 1f);
+        }
         yield return new WaitForSeconds(.1f);
-        var damages = Instantiate(valueText, building.transform.position, Quaternion.identity);
-        damages.transform.SetParent(CanvasContainer.transform);
-        damages.transform.localScale = new Vector3(.5f, .5f, .5f);
-        damages.GetComponent<Text>().text = (building.tickEcoDamage * -1).ToString() + "eco";
-        damages.GetComponent<Text>().color = (building.tickEcoDamage <= 0 ? good : bad);
-        damages.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 150));
-        Destroy(damages, 1f);
+        if (building != null)
+        {
+            var damages = Instantiate(valueText, building.transform.position, Quaternion.identity);
+            damages.transform.SetParent(CanvasContainer.transform);
+            damages.transform.localScale = new Vector3(.5f, .5f, .5f);
+            damages.GetComponent<Text>().text = (building.tickEcoDamage * -1).ToString() + "eco";
+            damages.GetComponent<Text>().color = (building.tickEcoDamage <= 0 ? good : bad);
+            damages.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 150));
+            Destroy(damages, 1f);
+        }
     }
 
     // Get a reference to the building, reposition it at the center of the tile
