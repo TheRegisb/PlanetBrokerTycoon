@@ -6,19 +6,19 @@ using UnityEngine.UI;
 public class GlobalStateMachine : MonoBehaviour
 {
     // The amount of money the player have. Cannot be negative.
-    public int money = 5000;
+    public int money = 10000;
     // Scale from 0 to 100. Game over on 100.
     public float financialPressure = 0f;
     // Increase of the pressure per tick.
-    public float financialPressureRate = 0.3f;
+    public float financialPressureRate = 1f;
     // Increase of the pressure rate per tick.
-    public float financialPressureRateIncrease = 0.2f;
+    public float financialPressureRateIncrease = 0.1f;
     // Reduce the pressure when acquiring money.
-    public float moneyToPressureReliefConversionRate = 0.0001f;
+    public float moneyToPressureReliefConversionRate = 0.0004f;
     // Scale from 0 to 100. Game over on 0.
     public float ecologialIntegrity = 100.0f;
     // Time in seconds before next tick.
-    public float tickDelay = 2.0f;
+    public float tickDelay = 1.0f;
 
     public GameObject gameOverModal;
     public string ecologicalGameOverMsg;
