@@ -4009,7 +4009,7 @@ MonoBehaviour:
   financialPressureRateIncrease: 0.03
   moneyToPressureReliefConversionRate: 0.0005
   ecologialIntegrity: 100
-  tickDelay: 0.5
+  tickDelay: 1
   gameOverModal: {fileID: 172999807}
   ecologicalGameOverMsg: "Votre exploitation abusive des ressources naturelles a
     ruin\xE9 l'\xE9cosyst\xE8me de mani\xE8re d\xE9finitive !"
